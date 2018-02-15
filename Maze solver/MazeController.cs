@@ -17,17 +17,28 @@ namespace Maze_solver
             if (ValidateCanvas(canvas))
             {
                 this.canvas = canvas;
-                Maze = new Maze((int)canvas.Width/25,(int)canvas.Height/25);
+                CreateMaze();
             }
             else
             {
                 throw new Exception("Invalid canvas size. Dimensions must be devisible by 25.");
             }
+        }
+
+        private void CreateMaze()
+        {
+            Maze = new Maze((int)canvas.Width / 25, (int)canvas.Height / 25);
 
             foreach (Field field in Maze.Fields)
             {
                 canvas.Children.Add(field.Rectangle);
             }
+        }
+
+        public void Restart()
+        {
+            canvas.Children.Clear();
+            CreateMaze();
         }
 
         private bool ValidateCanvas(Canvas canvas)

@@ -28,9 +28,14 @@ namespace Maze_solver
             mazeController = new MazeController(mainCanvas);
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void ButtonSolve_Click(object sender, RoutedEventArgs e)
         {
             mazeController.SolveMaze();
+        }
+
+        private void ButtonRestart_Click(object sender, RoutedEventArgs e)
+        {
+            mazeController.Restart();
         }
     }
 }

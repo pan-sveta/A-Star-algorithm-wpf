@@ -19,7 +19,7 @@ namespace Maze_solver
         public int GScore { get; set; }
         public int HScore { get; set; }
         public int FScore { get; set; }
-        public Field CameFrom { get; set; }
+        public Field CameFrom { get; set; }   
 
         private State fieldState;
 
@@ -62,6 +62,7 @@ namespace Maze_solver
         internal void CalculatFScore()
         {
             FScore = GScore + HScore;
+            this.Rectangle.Fill = Brushes.Blue;
         }
 
         private void ChangeFieldFill(State toState)

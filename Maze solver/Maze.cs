@@ -13,7 +13,7 @@ namespace Maze_solver
         public int Width { get; private set; }
         public int Height { get; private set; }
         public Field[,] Fields { get; private set; }
-        List<Field> solution;
+        public List<Field> Solution { get; private set; }
 
         public Maze(int width, int height)
         {
@@ -54,11 +54,7 @@ namespace Maze_solver
 
                 if (x.FieldState==State.Destination)
                 {
-                    solution = ReconstructSolution(x, start);
-                    foreach (var item in solution)
-                    {
-                        item.Rectangle.Fill = Brushes.Purple;
-                    }
+                    Solution = ReconstructSolution(x, start);
                     return;
                 }
 
@@ -108,6 +104,7 @@ namespace Maze_solver
             while (current!=start)
             {
                 list.Add(current);
+                current.Rectangle.Fill = Brushes.Purple;
                 current = current.CameFrom;
             }
             list.Add(start);

@@ -5,11 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Maze_solver"
         mc:Ignorable="d"
-        Title="MainWindow" Height="550" Width="700">
+        Title="A* solving algorithm" Height="550" Width="700" ResizeMode="NoResize">
     <Grid>
-        <Canvas x:Name="mainCanvas" HorizontalAlignment="Left" Height="500" Margin="10,10,0,0" VerticalAlignment="Top" Width="500
-                "/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="590,123,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-
+        <Canvas x:Name="mainCanvas" HorizontalAlignment="Left" Height="500" Margin="10,10,0,0" VerticalAlignment="Top" Width="500"/>
+        <Button x:Name="ButtonSolve" Content="Solve" HorizontalAlignment="Left" Margin="515,154,0,0" VerticalAlignment="Top" Width="164" Click="ButtonSolve_Click" Height="43" FontSize="20"/>
+        <TextBlock HorizontalAlignment="Left" Height="32.077" Margin="515,10,0,0" TextWrapping="Wrap" Text="A* search algorithm" VerticalAlignment="Top" Width="169" FontSize="18"/>
+        <TextBlock HorizontalAlignment="Left" Height="102" Margin="515,47.077,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169"><Run Text="A* search algorithm"/><Run Text=" is used to find best path. Select walls, start and destination on field map and hit solve. Algo will do his best to find"/><Run Text=" most efficient path."/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="32.077" Margin="515,263.371,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" FontSize="18"><Run Text="Explanation"/><Run Text=":"/></TextBlock>
+        <Rectangle Fill="Black" HorizontalAlignment="Left" Height="25" Margin="515,300.448,0,0" Stroke="Black" VerticalAlignment="Top" Width="25"/>
+        <TextBlock HorizontalAlignment="Left" Height="25" Margin="545,300.448,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="139" FontSize="18" Text="Wall"/>
+        <Rectangle Fill="Green" HorizontalAlignment="Left" Height="25" Margin="515,330.448,0,0" Stroke="Black" VerticalAlignment="Top" Width="25"/>
+        <TextBlock HorizontalAlignment="Left" Height="25" Margin="545,330.448,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="139" FontSize="18" Text="Start"/>
+        <Rectangle Fill="Red" HorizontalAlignment="Left" Height="25" Margin="515,360.448,0,0" Stroke="Black" VerticalAlignment="Top" Width="25"/>
+        <TextBlock HorizontalAlignment="Left" Height="25" Margin="545,360.448,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="139" FontSize="18" Text="Destination"/>
+        <Rectangle Fill="Blue" HorizontalAlignment="Left" Height="25" Margin="515,390.448,0,0" Stroke="Black" VerticalAlignment="Top" Width="25"/>
+        <TextBlock HorizontalAlignment="Left" Height="25" Margin="545,390.448,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="139" FontSize="18" Text="Explored"/>
+        <Rectangle Fill="Purple" HorizontalAlignment="Left" Height="25" Margin="515,420.448,0,0" Stroke="Black" VerticalAlignment="Top" Width="25"/>
+        <TextBlock HorizontalAlignment="Left" Height="25" Margin="545,420.448,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="139" FontSize="18" Text="Path"/>
+        <TextBlock HorizontalAlignment="Left" Height="16.077" Margin="515,494.923,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169" FontSize="8" TextAlignment="Right"><Run Text="Created by Filip Stepanek"/><Run Text=". MIT License."/><Run Text=" 2017"/><Run Text=" "/></TextBlock>
+        <Button x:Name="ButtonRestart" Content="Restart" HorizontalAlignment="Left" Margin="515,202,0,0" VerticalAlignment="Top" Width="164" Click="ButtonRestart_Click" Height="42" FontSize="20"/>
     </Grid>
 </Window>
